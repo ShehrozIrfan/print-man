@@ -1,5 +1,5 @@
 /* ===================================================================
-   PRINT MAN — Core Stylesheet
+   PRINT MAN COMMUNICATION — Core Stylesheet
    Design language: CMYK registration marks, press-ink palette,
    paper-warm neutrals. Built mobile-first, enhanced upward.
 =================================================================== */
@@ -130,13 +130,9 @@ p{ margin:0; }
   display:flex; align-items:center; justify-content:space-between;
   height:76px;
 }
-.logo{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--ink); }
-.logo-mark{
-  width:34px; height:34px; border-radius:9px;
-  background:conic-gradient(from 220deg, var(--cobalt), var(--magenta), var(--cyan), var(--cobalt));
-  display:flex; align-items:center; justify-content:center;
-  color:#fff; font-size:14px; font-weight:800;
-}
+.logo{ display:flex; align-items:center; flex-shrink:0; }
+.logo-img{ height:80px; width:auto; display:block; object-fit:contain; }
+.footer .logo-img{ height:60px; }
 .nav-links{ display:none; align-items:center; gap:36px; }
 .nav-links a{
   font-size:15px; font-weight:500; color:var(--slate);
@@ -364,7 +360,7 @@ p{ margin:0; }
 .footer{ background:var(--ink); color:#9CA1AD; padding:72px 0 28px; }
 .footer-grid{ display:grid; gap:40px; grid-template-columns:1fr; margin-bottom:48px; }
 .footer-brand p{ font-size:14px; line-height:1.7; max-width:280px; margin:16px 0 22px; }
-.footer .logo{ color:var(--paper); }
+.footer .logo{ display:flex; align-items:center; }
 .social-row{ display:flex; gap:10px; }
 .social-row a{ width:38px; height:38px; border-radius:10px; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition:background .25s,border-color .25s; }
 .social-row a:hover{ background:var(--cobalt); border-color:var(--cobalt); }
@@ -451,9 +447,7 @@ p{ margin:0; }
     var(--paper-dim);
   display:flex; align-items:center; justify-content:center;
 }
-.map-pin{ display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--ink); }
-.map-pin svg{ width:40px; height:40px; color:var(--magenta); }
-.map-pin span{ font-size:13.5px; color:var(--slate-soft); }
+.map-placeholder iframe{ width:100%; height:100%; border:0; display:block; }
 
 .hours-table{ width:100%; border-collapse:collapse; }
 .hours-table tr{ border-bottom:1px solid var(--line); }
@@ -469,8 +463,23 @@ p{ margin:0; }
   transition:opacity .5s var(--ease), visibility .5s var(--ease);
 }
 .loader.hide{ opacity:0; visibility:hidden; }
-.loader-mark{ width:54px; height:54px; border-radius:14px; background:conic-gradient(from 220deg, var(--cobalt), var(--magenta), var(--cyan), var(--cobalt)); animation:spin 1.1s linear infinite; }
-@keyframes spin{ to{ transform:rotate(360deg); } }
+.loader-ring{
+  position:relative; width:92px; height:92px;
+  display:flex; align-items:center; justify-content:center;
+}
+.loader-ring::before{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  border:3px solid rgba(255,255,255,.12);
+  border-top-color:var(--cyan);
+  border-right-color:var(--magenta);
+  animation:loaderSpin .85s linear infinite;
+}
+.loader-logo{
+  width:68px; height:68px; border-radius:50%;
+  object-fit:cover; display:block;
+  box-shadow:0 0 0 3px rgba(255,255,255,.08);
+}
+@keyframes loaderSpin{ to{ transform:rotate(360deg); } }
 
 /* ---- focus visibility ---- */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{

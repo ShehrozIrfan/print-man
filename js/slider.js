@@ -1,5 +1,5 @@
 /* ===================================================================
-   PRINT MAN — slider.js
+   PRINT MAN COMMUNICATION — slider.js
    Lightweight testimonial slider. No dependencies.
 =================================================================== */
 (function () {

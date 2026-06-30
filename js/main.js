@@ -1,5 +1,5 @@
 /* ===================================================================
-   PRINT MAN — main.js
+   PRINT MAN COMMUNICATION — main.js
    Vanilla JS. No dependencies. Handles: loader, navbar scroll state,
    mobile menu, scroll-reveal, animated counters, FAQ accordion,
    back-to-top, current-year stamp.
