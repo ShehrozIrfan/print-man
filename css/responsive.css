@@ -1,0 +1,51 @@
+/* ===================================================================
+   PRINT MAN — Responsive Layer
+   Base CSS is mobile-first; this file holds extra breakpoint tuning
+   that doesn't belong inline in component blocks.
+=================================================================== */
+
+/* Small phones */
+@media (max-width:380px){
+  .container{ padding:0 18px; }
+  .hero{ padding-top:128px; }
+  .btn{ padding:12px 20px; font-size:14px; }
+  .press-card{ padding:22px; }
+}
+
+/* Phones → small tablets */
+@media (max-width:599px){
+  .section{ padding:64px 0; }
+  .section--tight{ padding:40px 0; }
+  .hero-actions{ flex-direction:column; align-items:stretch; }
+  .hero-actions .btn{ width:100%; }
+  .hero-trust{ gap:20px; }
+  .floaty{ display:none; }
+  .cta-actions{ flex-direction:column; }
+  .cta-actions .btn{ width:100%; }
+  .footer-bottom{ text-align:center; }
+}
+
+/* Tablets */
+@media (min-width:600px) and (max-width:899px){
+  .hero{ padding-top:140px; }
+}
+
+/* Ensure no horizontal scroll anywhere */
+html, body{ max-width:100%; overflow-x:hidden; }
+
+/* Large desktop refinement */
+@media (min-width:1280px){
+  .container{ max-width:1240px; }
+  .hero h1{ font-size:68px; }
+}
+
+/* Touch target comfort on coarse pointers */
+@media (pointer:coarse){
+  .btn, .nav-links a, .faq-q, .hamburger, .fab{ min-height:44px; }
+}
+
+/* Print stylesheet: keep it simple/legible */
+@media print{
+  .navbar, .fab-stack, .loader, .hero-visual, .mobile-menu{ display:none !important; }
+  body{ background:#fff; color:#000; }
+}
