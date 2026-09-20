@@ -1,515 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Print Man Communication | Premium Printing Services in Lahore</title>
-<meta name="description" content="Print Man Communication is Lahore's modern print partner for business cards, brochures, packaging, banners and more. Get instant pricing on WhatsApp — no signup, no hassle.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.printman.pk/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Print Man® | Printing Services in Pakistan and Worldwide</title>
+  <meta name="description" content="Print Man® offers business cards, flyers, banners, stickers, packaging and custom printing worldwide. Get a quote on WhatsApp and receive your order at your door." />
+  <meta name="theme-color" content="#454885" />
+  <meta property="og:title" content="Print Man® | Printing Services in Pakistan and Worldwide" />
+  <meta property="og:description" content="Business cards, banners, stickers, packaging and more. Quote on WhatsApp, delivered worldwide." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Print Man Communication | Premium Printing Services in Lahore">
-<meta property="og:description" content="Business cards, brochures, packaging, banners and more — quoted instantly on WhatsApp.">
-<meta property="og:image" content="images/logo.jpeg">
-<meta property="og:url" content="https://www.printman.pk/">
-<meta property="og:site_name" content="Print Man Communication">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Print Man Communication | Premium Printing Services in Lahore">
-<meta name="twitter:description" content="Business cards, brochures, packaging, banners and more — quoted instantly on WhatsApp.">
-<meta name="twitter:image" content="images/logo.jpeg">
+  <!-- Third-party styling: Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#12141C',
+            brand: '#454885',
+            sheet: '#F3F5F8',
+            cy: '#0AA5E0',
+            cyd: '#06749F',
+            mg: '#E5177F',
+            mgd: '#C10E69',
+            ye: '#FFD60A',
+            wa: '#25D366',
+          },
+        },
+      },
+    };
+  </script>
 
-<link rel="icon" href="images/logo.jpeg" type="image/jpeg">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
 
-<!-- Loader -->
-<div class="loader" aria-hidden="true"><div class="loader-ring"><img src="images/logo.jpeg" alt="" class="loader-logo"></div></div>
+<body class="bg-white text-ink font-sans antialiased">
+  <a href="#main" class="skip-link">Skip to content</a>
 
-<!-- ============ NAVBAR ============ -->
-<header class="navbar">
-  <div class="container nav-inner">
-    <a href="index.html" class="logo" aria-label="Print Man Communication home">
-      <img src="images/logo.jpeg" alt="Print Man Communication" class="logo-img">
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-ink/10 transition-shadow">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center" aria-label="Print Man home">
+        <img src="assets/logo.png" alt="Print Man® Printing Company" width="394" height="156" class="h-11 w-auto" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Primary">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#process">How it works</a>
+        <a class="nav-link" href="#materials">Materials</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like a printing quote." class="btn btn-wa hidden sm:inline-flex !min-h-[42px] !px-4 text-sm">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+          WhatsApp us
+        </a>
+        <button id="menu-btn" class="md:hidden w-11 h-11 grid place-items-center rounded-lg border border-ink/15" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path id="menu-open" d="M4 7h16M4 12h16M4 17h16" />
+            <path id="menu-close" class="hidden" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="hidden md:hidden border-t border-ink/10 bg-white" aria-label="Mobile">
+      <div class="max-w-6xl mx-auto px-5 py-3 grid text-lg font-medium">
+        <a class="py-3 border-b border-ink/10" href="#services">Services</a>
+        <a class="py-3 border-b border-ink/10" href="#process">How it works</a>
+        <a class="py-3 border-b border-ink/10" href="#materials">Materials</a>
+        <a class="py-3" href="#contact">Contact</a>
+        <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like a printing quote." class="btn btn-wa mt-3 w-full">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
     </nav>
-    <a class="btn btn-primary nav-cta btn-sm" href="https://wa.me/923111151411" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.1 8.1 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
-      Chat Now
-    </a>
-    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  </header>
 
-<!-- ============ MOBILE MENU ============ -->
-<div class="mobile-menu">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a class="btn btn-primary btn-block" href="https://wa.me/923111151411" target="_blank" rel="noopener">Chat on WhatsApp</a>
-</div>
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section id="top" class="relative overflow-hidden bg-sheet">
+      <div class="halftone" aria-hidden="true"></div>
 
-<main>
+      <div class="relative max-w-6xl mx-auto px-5 pt-12 pb-16 md:pt-20 md:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
+        <div class="lg:col-span-7">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-3.5 py-1.5 text-sm font-medium">
+            <span class="w-2 h-2 rounded-full bg-wa"></span>
+            Printing services worldwide
+          </p>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="dots"><span></span><span></span><span></span></span>Lahore's Print Partner</span>
-        <h1>Printing that <em>shows up</em> exactly how you imagined it.</h1>
-        <p class="lead">From business cards to packaging and banners — Print Man Communication delivers studio-grade print work with same-week turnaround. No accounts, no checkout. Just send your design on WhatsApp.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/923111151411" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.1 8.1 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
-            Get a Free Quote
+          <h1 class="misreg font-display font-extrabold tracking-tight leading-[1.02] text-[2.75rem] sm:text-6xl lg:text-[4.4rem] mt-6" data-text="Print it once. Print it right.">
+            Print it once. Print it right.
+          </h1>
+
+          <p class="mt-6 text-lg md:text-xl text-ink/75 max-w-xl leading-relaxed">
+            Business cards, banners, stickers, packaging and more, printed for customers all over the world. Send your files on WhatsApp, approve a proof, and get your order delivered wherever you are.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like a printing quote." class="btn btn-wa text-lg">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+              Get a quote on WhatsApp
+            </a>
+            <a href="#services" class="btn btn-ghost text-lg">See what we print</a>
+          </div>
+
+          <ul class="mt-8 grid sm:grid-cols-3 gap-x-6 gap-y-2 text-[15px] text-ink/80">
+            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free file check</li>
+            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Proof before we print</li>
+            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Worldwide delivery</li>
+          </ul>
+        </div>
+
+        <!-- Print sheet illustration -->
+        <div class="lg:col-span-5">
+          <svg class="sheet-art w-full max-w-md mx-auto" viewBox="0 0 480 440" role="img" aria-label="A printed sheet with a business card, a sticker, a flyer, crop marks and a CMYK colour bar">
+            <defs>
+              <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+                <circle cx="4" cy="4" r="1.6" fill="#0AA5E0" />
+              </pattern>
+              <filter id="soft" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#12141C" flood-opacity="0.16" />
+              </filter>
+            </defs>
+
+            <!-- paper -->
+            <rect x="40" y="30" width="400" height="380" rx="4" fill="#fff" filter="url(#soft)" />
+
+            <!-- crop marks -->
+            <g stroke="#12141C" stroke-width="1.2">
+              <path d="M18 60h16M60 8v16" /><path d="M462 60h-16M420 8v16" />
+              <path d="M18 380h16M60 432v-16" /><path d="M462 380h-16M420 432v-16" />
+            </g>
+
+            <!-- registration target -->
+            <g transform="translate(392 66)" stroke="#12141C" stroke-width="1.2" fill="none">
+              <circle r="11" /><circle r="4" />
+              <path d="M-16 0h32M0 -16v32" />
+            </g>
+
+            <!-- flyer -->
+            <g transform="rotate(5 300 200)">
+              <rect x="228" y="92" width="150" height="200" rx="3" fill="#0AA5E0" />
+              <rect x="228" y="92" width="150" height="90" rx="3" fill="url(#dots)" opacity=".55" />
+              <rect x="244" y="204" width="86" height="10" rx="2" fill="#fff" />
+              <rect x="244" y="224" width="118" height="6" rx="2" fill="#fff" opacity=".8" />
+              <rect x="244" y="238" width="104" height="6" rx="2" fill="#fff" opacity=".8" />
+              <rect x="244" y="252" width="60" height="6" rx="2" fill="#fff" opacity=".8" />
+            </g>
+
+            <!-- business card -->
+            <g transform="rotate(-7 150 150)">
+              <rect x="66" y="96" width="184" height="108" rx="6" fill="#12141C" />
+              <g transform="translate(84 114)">
+                <circle cx="5" cy="5" r="4.5" fill="#0AA5E0" /><circle cx="15" cy="5" r="4.5" fill="#E5177F" />
+                <circle cx="5" cy="15" r="4.5" fill="#FFD60A" /><circle cx="15" cy="15" r="4.5" fill="#fff" />
+              </g>
+              <text x="84" y="170" fill="#fff" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="20">Print Man<tspan font-size="9" dy="-9">®</tspan></text>
+              <text x="84" y="188" fill="#fff" opacity=".7" font-family="DM Sans, sans-serif" font-size="10">Cards. Banners. Packaging.</text>
+            </g>
+
+            <!-- sticker -->
+            <g transform="translate(128 274)">
+              <circle r="56" fill="#E5177F" />
+              <circle r="46" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 4" />
+              <text y="-2" text-anchor="middle" fill="#fff" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="24">Sticker</text>
+              <text y="20" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="12">die-cut, waterproof</text>
+            </g>
+
+            <!-- tag -->
+            <g transform="rotate(-4 320 330)">
+              <rect x="250" y="312" width="150" height="40" rx="20" fill="#FFD60A" />
+              <text x="325" y="337" text-anchor="middle" fill="#12141C" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="16">Ready in 48 hrs</text>
+            </g>
+
+            <!-- CMYK colour bar -->
+            <g transform="translate(66 372)">
+              <rect width="42" height="18" fill="#0AA5E0" /><rect x="42" width="42" height="18" fill="#E5177F" />
+              <rect x="84" width="42" height="18" fill="#FFD60A" /><rect x="126" width="42" height="18" fill="#12141C" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="max-w-2xl">
+          <h2 class="section-title">What we print</h2>
+          <p class="section-lead">From a single sample to a bulk run. Tell us what you need on WhatsApp and we will reply with a quote and options.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Business cards (featured) -->
+          <article class="tile tile-dark lg:col-span-2">
+            <svg class="tile-icon text-ye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h6M7 14h4"/></svg>
+            <h3 class="tile-title">Business cards</h3>
+            <p class="tile-text">Matte, gloss, soft-touch, spot UV and foil finishes. Standard, rounded-corner and square sizes.</p>
+          </article>
+
+          <article class="tile">
+            <svg class="tile-icon text-cyd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>
+            <h3 class="tile-title">Flyers and brochures</h3>
+            <p class="tile-text">A5, A4 and DL sizes. Folded or flat, single or double sided.</p>
+          </article>
+
+          <article class="tile">
+            <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="10" rx="1"/><path d="M8 14v6M16 14v6"/></svg>
+            <h3 class="tile-title">Banners and flex</h3>
+            <p class="tile-text">Shop signs, event backdrops and standees. Weatherproof and eyelet-ready.</p>
+          </article>
+
+          <article class="tile">
+            <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 20.5c-.3-3 1-5 5-5"/></svg>
+            <h3 class="tile-title">Stickers and labels</h3>
+            <p class="tile-text">Die-cut vinyl, product labels and sheet stickers, waterproof on request.</p>
+          </article>
+
+          <!-- Packaging (featured, light colour) -->
+          <article class="tile tile-cyan lg:col-span-2">
+            <svg class="tile-icon text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+            <h3 class="tile-title">Packaging boxes</h3>
+            <p class="tile-text">Mailer boxes, shoppers, food boxes and custom inserts. Sample piece available before you commit to a full run.</p>
+          </article>
+
+          <article class="tile">
+            <svg class="tile-icon text-cyd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h11v9a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 8h2a2 2 0 0 1 0 5h-2"/></svg>
+            <h3 class="tile-title">Mugs and apparel</h3>
+            <p class="tile-text">Custom mugs, caps and t-shirts for teams, gifts and events.</p>
+          </article>
+
+          <article class="tile tile-yellow lg:col-span-2">
+            <svg class="tile-icon text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
+            <h3 class="tile-title">Wedding and invitation cards</h3>
+            <p class="tile-text">Elegant designs with gold foil, embossing and laser-cut details. Bulk orders welcome.</p>
+          </article>
+
+          <article class="tile lg:col-span-2">
+            <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7a2 2 0 0 1 1 .3A2 2 0 0 1 13 4h7v15h-7a2 2 0 0 0-1 .3 2 2 0 0 0-1-.3H4z"/><path d="M12 5v14"/></svg>
+            <h3 class="tile-title">Books, notebooks and binding</h3>
+            <p class="tile-text">Thesis printing, catalogues, company diaries and notebooks with spiral, perfect or hardcover binding.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="section bg-sheet">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="max-w-2xl">
+          <h2 class="section-title">How ordering works</h2>
+          <p class="section-lead">No cart and no account. The whole order happens in one WhatsApp chat.</p>
+        </div>
+
+        <ol class="mt-12 grid gap-6 md:grid-cols-4">
+          <li class="step">
+            <span class="step-dot bg-cy">1</span>
+            <h3 class="font-display font-bold text-xl">Send your files</h3>
+            <p class="mt-2 text-ink/70">Share your design or idea on WhatsApp with the size and quantity. No design? We can create one.</p>
+          </li>
+          <li class="step">
+            <span class="step-dot bg-mg text-white">2</span>
+            <h3 class="font-display font-bold text-xl">Get a quote and proof</h3>
+            <p class="mt-2 text-ink/70">We reply within working hours with the price, paper options and a digital proof.</p>
+          </li>
+          <li class="step">
+            <span class="step-dot bg-ye">3</span>
+            <h3 class="font-display font-bold text-xl">Approve and pay</h3>
+            <p class="mt-2 text-ink/70">Confirm the proof and pay by bank transfer, Easypaisa or JazzCash. Printing starts right away.</p>
+          </li>
+          <li class="step">
+            <span class="step-dot bg-brand text-white">4</span>
+            <h3 class="font-display font-bold text-xl">Pick up or get it delivered</h3>
+            <p class="mt-2 text-ink/70">Collect from our office or get it couriered to your door anywhere in the world.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MATERIALS ============ -->
+    <section id="materials" class="section bg-brand text-white">
+      <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4">
+          <h2 class="section-title !text-white">Papers and finishes</h2>
+          <p class="section-lead !text-white/70">Not sure what to pick? Tell us where it will be used and we will suggest the best option for your budget.</p>
+          <a href="https://wa.me/923111151411" data-wa="Hi Print Man, can you help me choose paper and finish for my print job?" class="btn btn-wa mt-8">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+            Ask for a recommendation
           </a>
-          <a class="btn btn-outline" href="services.html">Browse Services</a>
         </div>
-        <div class="hero-trust">
-          <div><strong data-count="12" data-suffix="+">0</strong><span>Years Printing</span></div>
-          <div><strong data-count="4800" data-suffix="+">0</strong><span>Orders Delivered</span></div>
-          <div><strong data-count="98" data-suffix="%">0</strong><span>On-Time Rate</span></div>
-        </div>
-      </div>
 
-      <div class="hero-visual">
-        <div class="press-card crop-host">
-          <div class="crop"><span class="ca"></span><span class="cb"></span></div>
-          <div class="swatches">
-            <span style="background:var(--cyan)"></span>
-            <span style="background:var(--magenta)"></span>
-            <span style="background:var(--yellow)"></span>
-            <span style="background:#fff"></span>
+        <div class="lg:col-span-8 grid sm:grid-cols-2 gap-10">
+          <div>
+            <h3 class="font-display font-bold text-xl text-ye">Stocks</h3>
+            <ul class="mt-4 flex flex-wrap gap-2.5">
+              <li class="chip">Art card 300 gsm</li>
+              <li class="chip">Matte art paper 350 gsm</li>
+              <li class="chip">Uncoated 100 gsm</li>
+              <li class="chip">Kraft board</li>
+              <li class="chip">Textured wedding stock</li>
+              <li class="chip">Self-adhesive vinyl</li>
+              <li class="chip">PVC flex 13 oz</li>
+              <li class="chip">Ceramic and sublimation</li>
+            </ul>
           </div>
-          <div class="reg top-right">
-            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="12"/><path d="M20 2v36M2 20h36"/></svg>
-          </div>
-          <div class="pc-foot">
-            <div>
-              <span class="label">Production</span>
-              <strong>Press Ready</strong>
-            </div>
-            <div class="reg" style="position:static;">
-              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="12"/><path d="M20 2v36M2 20h36"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="floaty floaty-1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-          <div><strong>Quote in 10 min</strong><span>via WhatsApp</span></div>
-        </div>
-        <div class="floaty floaty-2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-          <div><strong>Free Pickup</strong><span>Lahore city-wide</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STAT STRIP ============ -->
-  <section class="stats">
-    <div class="container stats-grid">
-      <div class="stat reveal"><strong data-count="350" data-suffix="+">0</strong><span>Active Businesses</span></div>
-      <div class="stat reveal"><strong data-count="60" data-suffix="+">0</strong><span>Material Options</span></div>
-      <div class="stat reveal"><strong data-count="24" data-suffix="h">0</strong><span>Rush Turnaround</span></div>
-      <div class="stat reveal"><strong data-count="12" data-suffix="+">0</strong><span>Print Categories</span></div>
-    </div>
-  </section>
-
-  <!-- ============ FEATURED SERVICES ============ -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dots"><span></span><span></span><span></span></span>What We Print</span>
-        <h2>Every format your brand needs, under one roof.</h2>
-        <p>Twelve core categories, each handled by specialists who know the material, the machine, and the deadline.</p>
-      </div>
-      <div class="grid grid--3">
-
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 10h4M14 14h4"/></svg></div>
-          <h3>Business Cards</h3>
-          <p>Matte, gloss, soft-touch or textured stock — first impressions, printed right.</p>
-          <a class="card-link" href="services.html#business-cards">View options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
-          <h3>Flyers</h3>
-          <p>Crisp, color-true flyers for launches, sales and street-level marketing.</p>
-          <a class="card-link" href="services.html#flyers">View options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h6v16H4zM10 4h10v16H10z"/></svg></div>
-          <h3>Brochures</h3>
-          <p>Tri-fold, bi-fold or booklet — built to explain, persuade and look premium.</p>
-          <a class="card-link" href="services.html#brochures">View options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <h3>Letterheads</h3>
-          <p>Consistent, professional stationery for every formal document you send.</p>
-          <a class="card-link" href="services.html#letterheads">View options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 6V4h10v2"/></svg></div>
-          <h3>Banners &amp; Flex</h3>
-          <p>Large-format outdoor and indoor banners, weatherproof and fade-resistant.</p>
-          <a class="card-link" href="services.html#banners">View options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8M12 13v8"/></svg></div>
-          <h3>Packaging</h3>
-          <p>Custom boxes and sleeves engineered to protect, present and stand out on shelf.</p>
-          <a class="card-link" href="services.html#packaging">View options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-
-      </div>
-      <div style="text-align:center; margin-top:40px;">
-        <a class="btn btn-dark" href="services.html">See All 12 Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FEATURED PRODUCTS ============ -->
-  <section class="section section--dim">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dots"><span></span><span></span><span></span></span>Popular Picks</span>
-        <h2>What customers reorder the most.</h2>
-        <p>A quick look at the formats moving fastest this month — tap any card to request pricing.</p>
-      </div>
-      <div class="grid grid--4">
-
-        <div class="product-card reveal">
-          <div class="thumb"><img src="https://picsum.photos/seed/printman-bc/500/375" alt="Stack of premium business cards" loading="lazy" width="500" height="375"></div>
-          <div class="body">
-            <h3>Premium Business Cards</h3>
-            <p>Soft-touch lamination, spot UV optional.</p>
-            <a class="btn btn-primary btn-sm btn-block" href="https://wa.me/923111151411?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Business%20Cards" target="_blank" rel="noopener">Order on WhatsApp</a>
+          <div>
+            <h3 class="font-display font-bold text-xl text-ye">Finishes</h3>
+            <ul class="mt-4 flex flex-wrap gap-2.5">
+              <li class="chip">Matte lamination</li>
+              <li class="chip">Gloss lamination</li>
+              <li class="chip">Soft-touch</li>
+              <li class="chip">Spot UV</li>
+              <li class="chip">Gold and silver foil</li>
+              <li class="chip">Embossing</li>
+              <li class="chip">Die-cutting</li>
+              <li class="chip">Rounded corners</li>
+            </ul>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="product-card reveal">
-          <div class="thumb"><img src="https://picsum.photos/seed/printman-brochure/500/375" alt="Tri-fold brochure mockup" loading="lazy" width="500" height="375"></div>
-          <div class="body">
-            <h3>Tri-Fold Brochures</h3>
-            <p>150–300 GSM, gloss or matte finish.</p>
-            <a class="btn btn-primary btn-sm btn-block" href="https://wa.me/923111151411?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Brochures" target="_blank" rel="noopener">Order on WhatsApp</a>
-          </div>
-        </div>
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5">
+          <h2 class="section-title">Talk to Print Man<sup class="reg">®</sup></h2>
+          <p class="section-lead">The fastest way to get a quote is WhatsApp. You can also call or visit us.</p>
 
-        <div class="product-card reveal">
-          <div class="thumb"><img src="https://picsum.photos/seed/printman-flex/500/375" alt="Outdoor flex banner installation" loading="lazy" width="500" height="375"></div>
-          <div class="body">
-            <h3>Flex Banners</h3>
-            <p>Weatherproof vinyl, any size up to 20ft.</p>
-            <a class="btn btn-primary btn-sm btn-block" href="https://wa.me/923111151411?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Flex%20Banners" target="_blank" rel="noopener">Order on WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal">
-          <div class="thumb"><img src="https://picsum.photos/seed/printman-box/500/375" alt="Custom printed packaging boxes" loading="lazy" width="500" height="375"></div>
-          <div class="body">
-            <h3>Packaging Boxes</h3>
-            <p>Die-cut to your product, brand-printed inside &amp; out.</p>
-            <a class="btn btn-primary btn-sm btn-block" href="https://wa.me/923111151411?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Packaging%20Boxes" target="_blank" rel="noopener">Order on WhatsApp</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHY CHOOSE US ============ -->
-  <section class="section">
-    <div class="container split">
-      <div class="split-copy reveal-left">
-        <span class="eyebrow"><span class="dots"><span></span><span></span><span></span></span>Why Print Man Communication</span>
-        <h2>We treat your print run like our own brand is on the line.</h2>
-        <p>Color accuracy, paper choice and finishing all compound into how premium your brand feels in someone's hand. We sweat those details so you don't have to.</p>
-        <ul class="check-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Color-calibrated presses, checked every shift</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Free design check before anything goes to print</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Transparent WhatsApp pricing — no hidden charges</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>City-wide pickup &amp; delivery across Lahore</li>
-        </ul>
-        <a class="btn btn-dark" href="about.html">More About Us</a>
-      </div>
-      <div class="split-media reveal-right">
-        <img src="https://picsum.photos/seed/printman-press/640/480" alt="Print Man Communication production floor with offset press" loading="lazy" width="640" height="480">
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ OUR WORKFLOW ============ -->
-  <section class="section section--dim">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dots"><span></span><span></span><span></span></span>Our Process</span>
-        <h2>From WhatsApp message to doorstep — four steps.</h2>
-        <p>Sequenced exactly the way it happens, so you always know what's next.</p>
-      </div>
-      <div class="process-row">
-        <div class="process-step reveal">
-          <span class="process-num">01</span>
-          <div><h3>Send Your Brief</h3><p>Message us on WhatsApp with quantity, size and your design file (or ask us to create one).</p></div>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-num">02</span>
-          <div><h3>Get Instant Pricing</h3><p>We confirm stock, finishing and cost within minutes — no quotation forms.</p></div>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-num">03</span>
-          <div><h3>Approve &amp; Print</h3><p>You approve a digital proof, we run it on press the same day where possible.</p></div>
-        </div>
-        <div class="process-step reveal">
-          <span class="process-num">04</span>
-          <div><h3>Pickup or Delivery</h3><p>Collect in-store or have it delivered anywhere in Lahore.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ INDUSTRIES WE SERVE ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
-        <span class="eyebrow" style="justify-content:center;"><span class="dots"><span></span><span></span><span></span></span>Industries We Serve</span>
-        <h2>Built for businesses that print often.</h2>
-      </div>
-      <div class="grid grid--4">
-        <div class="card reveal" style="text-align:center; align-items:center;">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
-          <h3>Real Estate</h3>
-          <p>Brochures, signage &amp; flyers for listings and launches.</p>
-        </div>
-        <div class="card reveal" style="text-align:center; align-items:center;">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg></div>
-          <h3>Retail &amp; FMCG</h3>
-          <p>Packaging, shelf-talkers and price tags that sell.</p>
-        </div>
-        <div class="card reveal" style="text-align:center; align-items:center;">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-          <h3>Education</h3>
-          <p>Prospectuses, ID cards and event collateral.</p>
-        </div>
-        <div class="card reveal" style="text-align:center; align-items:center;">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-          <h3>Weddings &amp; Events</h3>
-          <p>Invitation cards, banners and on-site signage.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ GALLERY ============ -->
-  <section class="section section--dim">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dots"><span></span><span></span><span></span></span>From the Press</span>
-        <h2>A look at recent work.</h2>
-      </div>
-      <div class="grid grid--4">
-        <div class="reveal" style="border-radius:var(--r-md); overflow:hidden;"><img src="https://picsum.photos/seed/pm-g1/360/360" alt="Printed flyer samples" loading="lazy" width="360" height="360" style="aspect-ratio:1/1; object-fit:cover;"></div>
-        <div class="reveal" style="border-radius:var(--r-md); overflow:hidden;"><img src="https://picsum.photos/seed/pm-g2/360/360" alt="Brand stationery set" loading="lazy" width="360" height="360" style="aspect-ratio:1/1; object-fit:cover;"></div>
-        <div class="reveal" style="border-radius:var(--r-md); overflow:hidden;"><img src="https://picsum.photos/seed/pm-g3/360/360" alt="Packaging box prototype" loading="lazy" width="360" height="360" style="aspect-ratio:1/1; object-fit:cover;"></div>
-        <div class="reveal" style="border-radius:var(--r-md); overflow:hidden;"><img src="https://picsum.photos/seed/pm-g4/360/360" alt="Roll-up stand display" loading="lazy" width="360" height="360" style="aspect-ratio:1/1; object-fit:cover;"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
-        <span class="eyebrow" style="justify-content:center;"><span class="dots"><span></span><span></span><span></span></span>Client Words</span>
-        <h2>Trusted by teams across Lahore.</h2>
-      </div>
-      <div class="slider" data-slider style="position:relative;">
-        <button class="slider-arrow prev" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <div class="slider-track">
-          <div class="slide">
-            <div class="t-card">
-              <div class="stars">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <ul class="mt-8 space-y-6">
+            <li class="flex gap-4">
+              <span class="contact-icon bg-cy/15 text-cyd"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 1 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+              <div>
+                <p class="font-bold">Address</p>
+                <address class="not-italic text-ink/75 leading-relaxed">8-A, Lower Mall,<br />54000 Lahore, Pakistan</address>
+                <a class="link" href="https://www.google.com/maps/search/?api=1&query=8-A+Lower+Mall+54000+Lahore+Pakistan" target="_blank" rel="noopener noreferrer">Get directions</a>
               </div>
-              <p>"Sent our brochure design at 11am, had proofs by noon and finished stock the next morning. Genuinely the fastest print partner we've used."</p>
-              <div class="who"><strong>Amina Raza</strong><span>Marketing Lead, Property Group</span></div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="t-card">
-              <div class="stars">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+            </li>
+            <li class="flex gap-4">
+              <span class="contact-icon bg-mg/15 text-mgd"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+              <div>
+                <p class="font-bold">Phone</p>
+                <a class="text-ink/75 hover:text-ink text-lg" href="tel:+923111151411">+92 311 1151411</a>
               </div>
-              <p>"Our packaging boxes finally look like the brand we actually are. The color match was spot on across three reorders."</p>
-              <div class="who"><strong>Hassan Tariq</strong><span>Founder, Roastery Co.</span></div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="t-card">
-              <div class="stars">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+            </li>
+            <li class="flex gap-4">
+              <span class="contact-icon bg-wa/25 text-ink"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg></span>
+              <div>
+                <p class="font-bold">WhatsApp</p>
+                <a class="text-ink/75 hover:text-ink text-lg" href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like a printing quote.">+92 311 1151411</a>
               </div>
-              <p>"No login, no confusing portal — just a WhatsApp chat and the job's done. Wish more vendors worked this way."</p>
-              <div class="who"><strong>Sara Khalid</strong><span>Event Planner</span></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="contact-icon bg-brand/15 text-brand"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+              <div>
+                <p class="font-bold">Email</p>
+                <a class="text-ink/75 hover:text-ink text-lg break-all" href="mailto:printmanpk@gmail.com">printmanpk@gmail.com</a>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="contact-icon bg-ye/40 text-ink"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <div>
+                <p class="font-bold">Working hours</p>
+                <p class="text-ink/75">Monday to Saturday, 10:00 am to 8:00 pm<br />Sunday closed</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form id="quote-form" class="rounded-3xl border border-ink/10 bg-sheet p-6 md:p-8" novalidate>
+            <h3 class="font-display font-bold text-2xl">Quick quote request</h3>
+            <p class="mt-1 text-ink/70">Fill this in and we will open WhatsApp with your message ready to send.</p>
+
+            <div class="mt-6 grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="f-name" class="label">Your name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" class="field" placeholder="e.g. Ahmed Raza" required />
+              </div>
+              <div>
+                <label for="f-product" class="label">What do you need?</label>
+                <select id="f-product" name="product" class="field" required>
+                  <option value="">Choose a product</option>
+                  <option>Business cards</option>
+                  <option>Flyers and brochures</option>
+                  <option>Banners and flex</option>
+                  <option>Stickers and labels</option>
+                  <option>Packaging boxes</option>
+                  <option>Mugs and apparel</option>
+                  <option>Wedding and invitation cards</option>
+                  <option>Books, notebooks and binding</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="f-qty" class="label">Quantity and size</label>
+                <input id="f-qty" name="qty" type="text" class="field" placeholder="e.g. 500 pcs, A5" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="f-details" class="label">Details (optional)</label>
+                <textarea id="f-details" name="details" rows="4" class="field" placeholder="Paper, finish, deadline, delivery city..."></textarea>
+              </div>
             </div>
-          </div>
-        </div>
-        <button class="slider-arrow next" aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-        <div class="slider-nav"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ FAQ ============ -->
-  <section class="section section--dim">
-    <div class="container" style="max-width:780px;">
-      <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
-        <span class="eyebrow" style="justify-content:center;"><span class="dots"><span></span><span></span><span></span></span>Good to Know</span>
-        <h2>Frequently asked questions.</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">How do I place an order?<span class="plus"></span></button>
-          <div class="faq-a"><p>Just message us on WhatsApp with your design file (or describe what you need) and quantity. We'll send pricing and a proof before anything goes to print.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Do you offer design services?<span class="plus"></span></button>
-          <div class="faq-a"><p>Yes — if you don't have a ready file, our team can design business cards, flyers and packaging artwork for a small additional fee.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">What's the minimum order quantity?<span class="plus"></span></button>
-          <div class="faq-a"><p>It varies by product. Business cards start from 100 pieces; large-format items like banners have no minimum. Ask us on WhatsApp for your specific item.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">How fast is turnaround?</button>
-          <div class="faq-a"><p>Standard jobs ship in 24–72 hours. Rush printing is available same-day for most categories, subject to press availability.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Do you deliver outside Lahore?<span class="plus"></span></button>
-          <div class="faq-a"><p>Yes, we ship nationwide via courier. Delivery within Lahore is free above a minimum order value.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <p id="form-error" class="mt-4 text-mgd font-medium hidden" role="alert">Please enter your name and choose a product.</p>
 
-  <!-- ============ CONTACT BANNER ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-band reveal-scale">
-        <h2>Ready to print something great?</h2>
-        <p>Send us your file or idea on WhatsApp — pricing and a proof usually land within the hour.</p>
-        <div class="cta-actions">
-          <a class="btn btn-primary" href="https://wa.me/923111151411" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.1 8.1 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
-            Chat on WhatsApp
-          </a>
-          <a class="btn btn-outline" href="contact.html">Visit Our Branch</a>
+            <button type="submit" class="btn btn-wa w-full mt-6 text-lg">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+              Send on WhatsApp
+            </button>
+            <p class="mt-3 text-sm text-ink/60 text-center">Your message goes directly to us on WhatsApp. Nothing is stored on this website.</p>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo" aria-label="Print Man Communication home"><img src="images/logo.jpeg" alt="Print Man Communication" class="logo-img"></a>
-        <p>Lahore's modern print partner — premium output, transparent pricing, zero hassle. Everything ordered straight through WhatsApp.</p>
-        <div class="social-row">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://wa.me/923111151411" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.1 8.1 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
-        </div>
-      </div>
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-brand text-white/80">
+    <div class="max-w-6xl mx-auto px-5 py-12 grid gap-8 md:grid-cols-3">
       <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <span class="inline-block rounded-xl bg-white p-2">
+          <img src="assets/logo.png" alt="Print Man® Printing Company" width="394" height="156" class="h-14 w-auto" loading="lazy" />
+        </span>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed">Printing services worldwide. Quote on WhatsApp, delivered to your door.</p>
       </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#business-cards">Business Cards</a></li>
-          <li><a href="services.html#brochures">Brochures</a></li>
-          <li><a href="services.html#packaging">Packaging</a></li>
-          <li><a href="services.html#banners">Banners &amp; Flex</a></li>
-        </ul>
+      <div class="text-sm">
+        <p class="font-bold text-white">Visit or contact us</p>
+        <p class="mt-3 leading-relaxed">8-A, Lower Mall,<br />54000 Lahore, Pakistan</p>
+        <p class="mt-2"><a class="hover:text-white" href="tel:+923111151411">+92 311 1151411</a></p>
+        <p class="mt-1"><a class="hover:text-white break-all" href="mailto:printmanpk@gmail.com">printmanpk@gmail.com</a></p>
       </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>8-A Lower Mall, Data Darbar Rd, Lahore 54000, Pakistan</li>
-          <li><a href="tel:+923111151411">+92 311 1151411</a></li>
-          <li><a href="mailto:Infoprintman@yahoo.com">Infoprintman@yahoo.com</a></li>
+      <div class="text-sm">
+        <p class="font-bold text-white">Jump to</p>
+        <ul class="mt-3 grid grid-cols-2 gap-y-2 max-w-xs">
+          <li><a class="hover:text-white" href="#services">Services</a></li>
+          <li><a class="hover:text-white" href="#process">How it works</a></li>
+          <li><a class="hover:text-white" href="#materials">Materials</a></li>
+          <li><a class="hover:text-white" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Print Man Communication. All rights reserved.</span>
-      <span>Designed for premium, modern printing.</span>
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-5 py-5 text-sm text-white/70">
+        <p>&copy; <span id="year">2026</span> Print Man<sup class="reg">®</sup>. All rights reserved.</p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- ============ FLOATING ACTIONS ============ -->
-<div class="fab-stack">
-  <button class="fab fab-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
-  <a class="fab fab-wa" href="https://wa.me/923111151411" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <span class="pulse-ring"></span>
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.1 8.1 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  <!-- Floating WhatsApp button -->
+  <a id="wa-float" href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like a printing quote." class="wa-float" aria-label="Chat with Print Man on WhatsApp">
+    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+    <span class="hidden md:inline font-bold">Chat with us</span>
   </a>
-</div>
 
-<script src="js/main.js"></script>
-<script src="js/slider.js"></script>
+  <!-- WhatsApp icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24s-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z" />
+    </symbol>
+  </svg>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,162 +1,89 @@
-/* ===================================================================
-   PRINT MAN COMMUNICATION — main.js
-   Vanilla JS. No dependencies. Handles: loader, navbar scroll state,
-   mobile menu, scroll-reveal, animated counters, FAQ accordion,
-   back-to-top, current-year stamp.
-=================================================================== */
-(function () {
-  "use strict";
+/* ==========================================================
+   Print Man - site behaviour
+   Edit CONFIG below to change the WhatsApp number site-wide.
+   (Number in international format, digits only, no + or spaces.)
+   ========================================================== */
 
-  /* ---------- Loading screen ---------- */
-  window.addEventListener("load", function () {
-    var loader = document.querySelector(".loader");
-    if (loader) {
-      setTimeout(function () { loader.classList.add("hide"); }, 300);
-    }
-  });
+const CONFIG = {
+  whatsappNumber: "923111151411",
+  defaultMessage: "Hi Print Man, I'd like a printing quote.",
+};
 
-  /* ---------- Navbar scrolled state ---------- */
-  var navbar = document.querySelector(".navbar");
-  function onScroll() {
-    if (!navbar) return;
-    if (window.scrollY > 12) navbar.classList.add("scrolled");
-    else navbar.classList.remove("scrolled");
+function waLink(message) {
+  return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
 
-    toggleBackToTop();
+/* ---------- 1. WhatsApp links with pre-filled messages ---------- */
+document.querySelectorAll("[data-wa]").forEach((el) => {
+  el.href = waLink(el.dataset.wa || CONFIG.defaultMessage);
+  el.target = "_blank";
+  el.rel = "noopener noreferrer";
+});
+
+/* ---------- 2. Mobile menu ---------- */
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const iconOpen = document.getElementById("menu-open");
+const iconClose = document.getElementById("menu-close");
+
+function setMenu(open) {
+  mobileMenu.classList.toggle("hidden", !open);
+  iconOpen.classList.toggle("hidden", open);
+  iconClose.classList.toggle("hidden", !open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+
+menuBtn.addEventListener("click", () => {
+  setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
+});
+mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") setMenu(false);
+});
+window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => {
+  if (e.matches) setMenu(false);
+});
+
+/* ---------- 3. Header shadow on scroll ---------- */
+const header = document.getElementById("site-header");
+const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+/* ---------- 4. Quote form -> WhatsApp ---------- */
+const form = document.getElementById("quote-form");
+const errorEl = document.getElementById("form-error");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = form.elements.name.value.trim();
+  const product = form.elements.product.value.trim();
+  const qty = form.elements.qty.value.trim();
+  const details = form.elements.details.value.trim();
+
+  form.elements.name.classList.toggle("is-invalid", !name);
+  form.elements.product.classList.toggle("is-invalid", !product);
+
+  if (!name || !product) {
+    errorEl.classList.remove("hidden");
+    (name ? form.elements.product : form.elements.name).focus();
+    return;
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  errorEl.classList.add("hidden");
 
-  /* ---------- Mobile menu ---------- */
-  var hamburger = document.querySelector(".hamburger");
-  var mobileMenu = document.querySelector(".mobile-menu");
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", function () {
-      var isOpen = mobileMenu.classList.toggle("open");
-      hamburger.classList.toggle("open", isOpen);
-      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      document.body.style.overflow = isOpen ? "hidden" : "";
-    });
-    mobileMenu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        mobileMenu.classList.remove("open");
-        hamburger.classList.remove("open");
-        document.body.style.overflow = "";
-      });
-    });
-  }
+  const lines = [
+    "Hi Print Man, I'd like a quote.",
+    "",
+    `Name: ${name}`,
+    `Product: ${product}`,
+  ];
+  if (qty) lines.push(`Quantity / size: ${qty}`);
+  if (details) lines.push(`Details: ${details}`);
 
-  /* ---------- Scroll reveal ---------- */
-  var revealEls = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale");
-  if ("IntersectionObserver" in window && revealEls.length) {
-    revealEls.forEach(function (el, i) {
-      el.style.setProperty("--d", (i % 6) * 80 + "ms");
-    });
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("in"); });
-  }
+  window.open(waLink(lines.join("\n")), "_blank", "noopener");
+});
 
-  /* ---------- Animated counters ---------- */
-  var counters = document.querySelectorAll("[data-count]");
-  function animateCounter(el) {
-    var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    var suffix = el.getAttribute("data-suffix") || "";
-    var duration = 1400;
-    var start = null;
-
-    function step(ts) {
-      if (!start) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * target) + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target + suffix;
-    }
-    requestAnimationFrame(step);
-  }
-  if ("IntersectionObserver" in window && counters.length) {
-    var counterIO = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterIO.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    counters.forEach(function (el) { counterIO.observe(el); });
-  }
-
-  /* ---------- FAQ accordion ---------- */
-  document.querySelectorAll(".faq-item").forEach(function (item) {
-    var q = item.querySelector(".faq-q");
-    var a = item.querySelector(".faq-a");
-    if (!q || !a) return;
-    q.addEventListener("click", function () {
-      var isOpen = item.classList.contains("open");
-      item.parentElement.querySelectorAll(".faq-item.open").forEach(function (openItem) {
-        if (openItem !== item) {
-          openItem.classList.remove("open");
-          openItem.querySelector(".faq-a").style.maxHeight = null;
-          openItem.querySelector(".faq-q").setAttribute("aria-expanded", "false");
-        }
-      });
-      if (isOpen) {
-        item.classList.remove("open");
-        a.style.maxHeight = null;
-        q.setAttribute("aria-expanded", "false");
-      } else {
-        item.classList.add("open");
-        a.style.maxHeight = a.scrollHeight + "px";
-        q.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
-
-  /* ---------- Back to top ---------- */
-  var backToTop = document.querySelector(".fab-top");
-  function toggleBackToTop() {
-    if (!backToTop) return;
-    if (window.scrollY > 480) backToTop.classList.add("show");
-    else backToTop.classList.remove("show");
-  }
-  if (backToTop) {
-    backToTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  /* ---------- Footer year ---------- */
-  document.querySelectorAll("[data-year]").forEach(function (el) {
-    el.textContent = new Date().getFullYear();
-  });
-
-  /* ---------- Smooth scroll for in-page anchors ---------- */
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      var id = link.getAttribute("href");
-      if (id.length < 2) return;
-      var target = document.querySelector(id);
-      if (target) {
-        e.preventDefault();
-        var offset = 84;
-        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: top, behavior: "smooth" });
-      }
-    });
-  });
-})();
+/* ---------- 5. Footer year ---------- */
+document.getElementById("year").textContent = new Date().getFullYear();

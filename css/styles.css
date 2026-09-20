@@ -1,0 +1,329 @@
+/* ==========================================================
+   Print Man - custom styles
+   Tailwind (CDN) handles layout utilities; this file holds the
+   component styles and the hero "misregistration" effect.
+   ========================================================== */
+
+:root {
+  --ink: #12141c;
+  --brand: #454885;
+  --sheet: #f3f5f8;
+  --cy: #0aa5e0;
+  --cyd: #06749f;
+  --mg: #e5177f;
+  --mgd: #c10e69;
+  --ye: #ffd60a;
+  --wa: #25d366;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 64px;
+}
+
+/* ---------- Accessibility ---------- */
+:focus-visible {
+  outline: 3px solid var(--cyd);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: top 0.15s;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- Header ---------- */
+#site-header.is-scrolled {
+  box-shadow: 0 6px 20px rgba(18, 20, 28, 0.08);
+}
+
+.nav-link {
+  padding-block: 0.25rem;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--ye);
+  text-underline-offset: 8px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 52px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-wa {
+  background: var(--wa);
+  color: var(--ink);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+.btn-wa:hover {
+  background: #1fbd5a;
+}
+.btn-ghost {
+  background: #fff;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ---------- Hero ---------- */
+.halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(10, 165, 224, 0.32) 1.5px, transparent 2px);
+  background-size: 16px 16px;
+  -webkit-mask-image: linear-gradient(115deg, transparent 40%, #000 100%);
+  mask-image: linear-gradient(115deg, transparent 40%, #000 100%);
+  pointer-events: none;
+}
+
+/* The one animated moment: cyan and magenta plates start off-register
+   and snap into place behind the black headline, like a press check. */
+.misreg {
+  position: relative;
+  isolation: isolate;
+}
+.misreg::before,
+.misreg::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-delay: 0.25s;
+  animation-fill-mode: both;
+}
+.misreg::before {
+  color: var(--mg);
+  animation-name: plate-magenta;
+}
+.misreg::after {
+  color: var(--cy);
+  animation-name: plate-cyan;
+}
+
+@keyframes plate-magenta {
+  from { transform: translate(-10px, 6px); }
+  to   { transform: translate(0, 0); }
+}
+@keyframes plate-cyan {
+  from { transform: translate(9px, -6px); }
+  to   { transform: translate(0, 0); }
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding-block: 4.5rem;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-block: 6.5rem;
+  }
+}
+
+.section-title {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  line-height: 1.08;
+}
+.section-lead {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(18, 20, 28, 0.72);
+}
+
+/* ---------- Service tiles ---------- */
+.tile {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 1.75rem;
+  border-radius: 24px;
+  background: var(--sheet);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(18, 20, 28, 0.1);
+}
+.tile-dark   { background: var(--brand); color: #fff; }
+.tile-cyan   { background: var(--cy);  color: var(--ink); }
+.tile-yellow { background: var(--ye);  color: var(--ink); }
+
+.tile-icon {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 1.25rem;
+}
+.tile-title {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.tile-text {
+  margin-top: 0.6rem;
+  line-height: 1.55;
+  opacity: 0.8;
+}
+/* ---------- Process ---------- */
+.step {
+  position: relative;
+}
+.step-dot {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+@media (min-width: 768px) {
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 62px;
+    right: -1rem;
+    border-top: 2px dashed rgba(18, 20, 28, 0.25);
+  }
+}
+
+/* ---------- Materials ---------- */
+.chip {
+  padding: 0.5rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Registered mark ---------- */
+.reg {
+  font-size: 0.5em;
+  font-weight: 500;
+  line-height: 0;
+  vertical-align: super;
+  margin-left: 0.08em;
+}
+
+/* ---------- Contact ---------- */
+.contact-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+}
+.link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-weight: 700;
+  color: var(--cyd);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.link:hover {
+  color: var(--ink);
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.field {
+  width: 100%;
+  min-height: 50px;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid rgba(18, 20, 28, 0.2);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 1rem; /* 16px avoids iOS zoom on focus */
+  color: var(--ink);
+}
+.field::placeholder {
+  color: rgba(18, 20, 28, 0.45);
+}
+.field:focus {
+  outline: none;
+  border-color: var(--cyd);
+  box-shadow: 0 0 0 4px rgba(10, 165, 224, 0.25);
+}
+.field.is-invalid {
+  border-color: var(--mgd);
+}
+
+/* ---------- Floating WhatsApp ---------- */
+.wa-float {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 14px;
+  border-radius: 999px;
+  background: var(--wa);
+  color: var(--ink);
+  box-shadow: 0 10px 26px rgba(18, 20, 28, 0.28);
+  transition: transform 0.15s ease;
+}
+.wa-float:hover {
+  transform: translateY(-2px);
+}
+@media (min-width: 768px) {
+  .wa-float {
+    padding: 14px 22px 14px 18px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .misreg::before,
+  .misreg::after { animation: none; }
+  .tile, .btn, .wa-float { transition: none; }
+}
