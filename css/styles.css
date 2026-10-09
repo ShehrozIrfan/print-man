@@ -327,3 +327,49 @@ section[id] {
   .misreg::after { animation: none; }
   .tile, .btn, .wa-float { transition: none; }
 }
+
+/* ---------- FAQ ---------- */
+.faq {
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(18, 20, 28, 0.08);
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 56px;
+  padding: 1rem 1.25rem;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 18px;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sheet);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.faq[open] summary::after {
+  content: "\2212"; /* minus sign */
+}
+.faq p {
+  padding: 0 1.25rem 1.25rem;
+  line-height: 1.6;
+  color: rgba(18, 20, 28, 0.75);
+}

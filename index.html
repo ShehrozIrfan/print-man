@@ -3,13 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Print Man® | Printing Services in Pakistan and Worldwide</title>
-  <meta name="description" content="Print Man® offers business cards, flyers, banners, stickers, packaging and custom printing worldwide. Get a quote on WhatsApp and receive your order at your door." />
+  <title>Printing in Lahore | Cards, Flex, Packaging | Print Man®</title>
+  <meta name="description" content="In-house printing in Lahore: cards, flex, stickers and packaging. Ready in 48 hours, rush orders too. Quote on WhatsApp. Delivery across Pakistan and worldwide." />
   <meta name="theme-color" content="#454885" />
-  <meta property="og:title" content="Print Man® | Printing Services in Pakistan and Worldwide" />
-  <meta property="og:description" content="Business cards, banners, stickers, packaging and more. Quote on WhatsApp, delivered worldwide." />
+  <link rel="canonical" href="https://printmanpk.com/" />
+
+  <!-- Social sharing -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Print Man®" />
+  <meta property="og:locale" content="en_PK" />
+  <meta property="og:url" content="https://printmanpk.com/" />
+  <meta property="og:title" content="Printing in Lahore | Cards, Flex, Packaging | Print Man®" />
+  <meta property="og:description" content="In-house printing in Lahore: cards, flex, stickers and packaging. Ready in 48 hours, rush orders too. Quote on WhatsApp. Delivery across Pakistan and worldwide." />
+  <!-- TODO(owner): add a 1200x630 share image (e.g. assets/og-image.jpg), then add
+       <meta property="og:image" content="https://printmanpk.com/assets/og-image.jpg" />
+       <meta property="og:image:width" content="1200" /> <meta property="og:image:height" content="630" />
+       and change twitter:card below to "summary_large_image". -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Printing in Lahore | Cards, Flex, Packaging | Print Man®" />
+  <meta name="twitter:description" content="In-house printing in Lahore: cards, flex, stickers and packaging. Ready in 48 hours, rush orders too. Quote on WhatsApp. Delivery across Pakistan and worldwide." />
+
   <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Structured data: keep in sync with the contact details shown on the page -->
+  <!-- TODO(owner): add "geo" (latitude/longitude of the shop) once confirmed -->
+  <!-- TODO(owner): add "sameAs" with links to official social profiles -->
+  <!-- TODO(owner): replace "image" with a photo of the shop or work, when available -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Print Man®",
+    "url": "https://printmanpk.com/",
+    "logo": "https://printmanpk.com/assets/logo.png",
+    "image": "https://printmanpk.com/assets/logo.png",
+    "telephone": "+92 311 1151411",
+    "email": "printmanpk@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8-A, Lower Mall",
+      "addressLocality": "Lahore",
+      "postalCode": "54000",
+      "addressCountry": "PK"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Lahore" },
+      { "@type": "Country", "name": "Pakistan" }
+    ]
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,14 +101,16 @@
   <!-- ============ HEADER ============ -->
   <header id="site-header" class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-ink/10 transition-shadow">
     <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-      <a href="#top" class="flex items-center" aria-label="Print Man home">
-        <img src="assets/logo.png" alt="Print Man® Printing Company" width="394" height="156" class="h-11 w-auto" />
+      <a href="#top" class="flex items-center">
+        <img src="assets/logo.png" alt="Print Man® home" width="394" height="156" class="h-11 w-auto" />
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Primary">
+      <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-[15px] font-medium" aria-label="Primary">
         <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link hidden lg:inline" href="#customers">Who we print for</a>
         <a class="nav-link" href="#process">How it works</a>
         <a class="nav-link" href="#materials">Materials</a>
+        <a class="nav-link hidden lg:inline" href="#faq">FAQ</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
 
@@ -79,8 +131,10 @@
     <nav id="mobile-menu" class="hidden md:hidden border-t border-ink/10 bg-white" aria-label="Mobile">
       <div class="max-w-6xl mx-auto px-5 py-3 grid text-lg font-medium">
         <a class="py-3 border-b border-ink/10" href="#services">Services</a>
+        <a class="py-3 border-b border-ink/10" href="#customers">Who we print for</a>
         <a class="py-3 border-b border-ink/10" href="#process">How it works</a>
         <a class="py-3 border-b border-ink/10" href="#materials">Materials</a>
+        <a class="py-3 border-b border-ink/10" href="#faq">FAQ</a>
         <a class="py-3" href="#contact">Contact</a>
         <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like a printing quote." class="btn btn-wa mt-3 w-full">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
@@ -99,15 +153,17 @@
         <div class="lg:col-span-7">
           <p class="inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-3.5 py-1.5 text-sm font-medium">
             <span class="w-2 h-2 rounded-full bg-wa"></span>
-            Printing services worldwide
+            Printing in Lahore · Delivery across Pakistan and worldwide
           </p>
 
-          <h1 class="misreg font-display font-extrabold tracking-tight leading-[1.02] text-[2.75rem] sm:text-6xl lg:text-[4.4rem] mt-6" data-text="Print it once. Print it right.">
-            Print it once. Print it right.
+          <h1 class="misreg font-display font-extrabold tracking-tight leading-[1.05] text-[2.4rem] sm:text-5xl lg:text-[3.6rem] mt-6" data-text="Printing services in Lahore, all from one source">
+            Printing services in Lahore, all from one source
           </h1>
 
-          <p class="mt-6 text-lg md:text-xl text-ink/75 max-w-xl leading-relaxed">
-            Business cards, banners, stickers, packaging and more, printed for customers all over the world. Send your files on WhatsApp, approve a proof, and get your order delivered wherever you are.
+          <p class="mt-4 font-display font-bold text-xl md:text-2xl">Print it once. Print it right.</p>
+
+          <p class="mt-4 text-lg md:text-xl text-ink/75 max-w-xl leading-relaxed">
+            Business cards, flex, stickers, packaging and more, printed in-house at our office on Lower Mall, Lahore. Send your files on WhatsApp, approve a proof, then pick up your order or get it delivered across Pakistan and worldwide.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
@@ -118,10 +174,11 @@
             <a href="#services" class="btn btn-ghost text-lg">See what we print</a>
           </div>
 
-          <ul class="mt-8 grid sm:grid-cols-3 gap-x-6 gap-y-2 text-[15px] text-ink/80">
-            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free file check</li>
-            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Proof before we print</li>
-            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Worldwide delivery</li>
+          <ul class="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-2 text-[15px] text-ink/80">
+            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Ready in 48 hours</li>
+            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rush orders available</li>
+            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free file check</li>
+            <li class="flex items-center gap-2"><svg class="w-5 h-5 text-cyd shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Proof before we print</li>
           </ul>
         </div>
 
@@ -201,7 +258,7 @@
     <section id="services" class="section">
       <div class="max-w-6xl mx-auto px-5">
         <div class="max-w-2xl">
-          <h2 class="section-title">What we print</h2>
+          <h2 class="section-title">Printing services in Lahore</h2>
           <p class="section-lead">From a single sample to a bulk run. Tell us what you need on WhatsApp and we will reply with a quote and options.</p>
         </div>
 
@@ -209,51 +266,108 @@
           <!-- Business cards (featured) -->
           <article class="tile tile-dark lg:col-span-2">
             <svg class="tile-icon text-ye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h6M7 14h4"/></svg>
-            <h3 class="tile-title">Business cards</h3>
+            <h3 class="tile-title">Business card printing</h3>
             <p class="tile-text">Matte, gloss, soft-touch, spot UV and foil finishes. Standard, rounded-corner and square sizes.</p>
           </article>
 
           <article class="tile">
             <svg class="tile-icon text-cyd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>
-            <h3 class="tile-title">Flyers and brochures</h3>
+            <h3 class="tile-title">Flyer and brochure printing</h3>
             <p class="tile-text">A5, A4 and DL sizes. Folded or flat, single or double sided.</p>
           </article>
 
           <article class="tile">
             <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="10" rx="1"/><path d="M8 14v6M16 14v6"/></svg>
-            <h3 class="tile-title">Banners and flex</h3>
+            <h3 class="tile-title">Flex and banner printing</h3>
             <p class="tile-text">Shop signs, event backdrops and standees. Weatherproof and eyelet-ready.</p>
           </article>
 
           <article class="tile">
             <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 20.5c-.3-3 1-5 5-5"/></svg>
-            <h3 class="tile-title">Stickers and labels</h3>
+            <h3 class="tile-title">Sticker and label printing</h3>
             <p class="tile-text">Die-cut vinyl, product labels and sheet stickers, waterproof on request.</p>
           </article>
 
           <!-- Packaging (featured, light colour) -->
           <article class="tile tile-cyan lg:col-span-2">
             <svg class="tile-icon text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
-            <h3 class="tile-title">Packaging boxes</h3>
+            <h3 class="tile-title">Custom packaging boxes</h3>
             <p class="tile-text">Mailer boxes, shoppers, food boxes and custom inserts. Sample piece available before you commit to a full run.</p>
           </article>
 
           <article class="tile">
             <svg class="tile-icon text-cyd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h11v9a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 8h2a2 2 0 0 1 0 5h-2"/></svg>
-            <h3 class="tile-title">Mugs and apparel</h3>
+            <h3 class="tile-title">Mug, t-shirt and cap printing</h3>
             <p class="tile-text">Custom mugs, caps and t-shirts for teams, gifts and events.</p>
           </article>
 
           <article class="tile tile-yellow lg:col-span-2">
             <svg class="tile-icon text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
-            <h3 class="tile-title">Wedding and invitation cards</h3>
+            <h3 class="tile-title">Wedding card and invitation printing</h3>
             <p class="tile-text">Elegant designs with gold foil, embossing and laser-cut details. Bulk orders welcome.</p>
           </article>
 
           <article class="tile lg:col-span-2">
             <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7a2 2 0 0 1 1 .3A2 2 0 0 1 13 4h7v15h-7a2 2 0 0 0-1 .3 2 2 0 0 0-1-.3H4z"/><path d="M12 5v14"/></svg>
-            <h3 class="tile-title">Books, notebooks and binding</h3>
+            <h3 class="tile-title">Book printing and binding</h3>
             <p class="tile-text">Thesis printing, catalogues, company diaries and notebooks with spiral, perfect or hardcover binding.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHO WE PRINT FOR ============ -->
+    <section id="customers" class="section pt-0 md:pt-0">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="max-w-2xl">
+          <h2 class="section-title">Who we print for</h2>
+          <p class="section-lead">Shops, companies, families and customers far from Lahore: every job is printed in-house and handled in one WhatsApp chat.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="tile">
+            <svg class="tile-icon text-cyd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10"/><path d="M4 10a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5 12v8h14v-8M10 20v-5h4v5"/></svg>
+            <h3 class="tile-title">Shops and local businesses</h3>
+            <p class="tile-text">Business cards, flyers, flex signs, stickers, labels and packaging for your shop or brand, printed in-house.</p>
+            <div class="mt-auto pt-6">
+              <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I need printing for my shop/business." class="btn btn-wa !min-h-[44px] !px-4 text-sm">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+                Ask about business printing
+              </a>
+            </div>
+          </article>
+          <article class="tile">
+            <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg>
+            <h3 class="tile-title">Corporates and IT companies</h3>
+            <p class="tile-text">Team business cards, company diaries and notebooks, brochures, standees and backdrops, branded mugs, t-shirts and caps, laptop stickers, and packaging for welcome kits.</p>
+            <div class="mt-auto pt-6">
+              <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like a quote for printing for our company." class="btn btn-wa !min-h-[44px] !px-4 text-sm">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+                Ask about company printing
+              </a>
+            </div>
+          </article>
+          <article class="tile">
+            <svg class="tile-icon text-cyd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M12 9v12M3 13h18"/><path d="M12 9c-1.5-3-5-4-5-1.5S10 9 12 9c2 0 5 .5 5-1.5S13.5 6 12 9z"/></svg>
+            <h3 class="tile-title">Individuals and events</h3>
+            <p class="tile-text">Wedding cards, invitations, and gifts such as custom mugs and t-shirts.</p>
+            <div class="mt-auto pt-6">
+              <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I need printing for a wedding or event." class="btn btn-wa !min-h-[44px] !px-4 text-sm">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+                Ask about event printing
+              </a>
+            </div>
+          </article>
+          <article class="tile">
+            <svg class="tile-icon text-mgd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"/></svg>
+            <h3 class="tile-title">Outside Lahore and abroad</h3>
+            <p class="tile-text">Order on WhatsApp from anywhere. We send orders by courier across Pakistan and internationally.</p>
+            <div class="mt-auto pt-6">
+              <a href="https://wa.me/923111151411" data-wa="Hi Print Man, I'm outside Lahore and would like a printing quote. My city/country is: " class="btn btn-wa !min-h-[44px] !px-4 text-sm">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
+                Order from outside Lahore
+              </a>
+            </div>
           </article>
         </div>
       </div>
@@ -263,7 +377,7 @@
     <section id="process" class="section bg-sheet">
       <div class="max-w-6xl mx-auto px-5">
         <div class="max-w-2xl">
-          <h2 class="section-title">How ordering works</h2>
+          <h2 class="section-title">How to order printing on WhatsApp</h2>
           <p class="section-lead">No cart and no account. The whole order happens in one WhatsApp chat.</p>
         </div>
 
@@ -296,7 +410,7 @@
     <section id="materials" class="section bg-brand text-white">
       <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
         <div class="lg:col-span-4">
-          <h2 class="section-title !text-white">Papers and finishes</h2>
+          <h2 class="section-title !text-white">Paper stocks and print finishes</h2>
           <p class="section-lead !text-white/70">Not sure what to pick? Tell us where it will be used and we will suggest the best option for your budget.</p>
           <a href="https://wa.me/923111151411" data-wa="Hi Print Man, can you help me choose paper and finish for my print job?" class="btn btn-wa mt-8">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa" /></svg>
@@ -335,11 +449,52 @@
       </div>
     </section>
 
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section bg-sheet">
+      <div class="max-w-3xl mx-auto px-5">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <p class="section-lead">Can't find your answer? Ask us on WhatsApp.</p>
+
+        <div class="mt-10 space-y-3">
+          <details class="faq">
+            <summary>How fast can you print my order?</summary>
+            <p>Our standard turnaround is 48 hours. Rush orders are available, so tell us your deadline on WhatsApp.</p>
+          </details>
+          <details class="faq">
+            <summary>How do I send my design files?</summary>
+            <p>Send them on WhatsApp at <a class="link !mt-0" href="https://wa.me/923111151411" data-wa="Hi Print Man, I'd like to send my files for printing.">+92 311 1151411</a> with the size and quantity you need. We check every file for free before printing.</p>
+            <!-- TODO(owner): list accepted file formats -->
+          </details>
+          <details class="faq">
+            <summary>How can I pay?</summary>
+            <p>By bank transfer, Easypaisa or JazzCash, once you have approved your proof.</p>
+          </details>
+          <details class="faq">
+            <summary>Can I pick up my order in Lahore?</summary>
+            <p>Yes. Collect it from our office at 8-A, Lower Mall, Lahore, Monday to Saturday, 10:00 am to 8:00 pm, or ask for courier delivery.</p>
+            <!-- TODO(owner): list delivery areas within Lahore, if you want to name them -->
+          </details>
+          <details class="faq">
+            <summary>Do you deliver outside Lahore or abroad?</summary>
+            <p>Yes. We courier orders to other cities in Pakistan and have shipped internationally. Tell us your city or country on WhatsApp and we will confirm the details.</p>
+          </details>
+          <details class="faq">
+            <summary>I don't have a design. Can you help?</summary>
+            <p>Yes. Tell us what you need and we will help you design it.</p>
+          </details>
+          <details class="faq">
+            <summary>Will I see my design before it is printed?</summary>
+            <p>Yes. We send you a digital proof and only print once you approve it.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="section">
       <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
         <div class="lg:col-span-5">
-          <h2 class="section-title">Talk to Print Man<sup class="reg">®</sup></h2>
+          <h2 class="section-title">Contact Print Man<sup class="reg">®</sup> in Lahore</h2>
           <p class="section-lead">The fastest way to get a quote is WhatsApp. You can also call or visit us.</p>
 
           <ul class="mt-8 space-y-6">
@@ -435,9 +590,9 @@
     <div class="max-w-6xl mx-auto px-5 py-12 grid gap-8 md:grid-cols-3">
       <div>
         <span class="inline-block rounded-xl bg-white p-2">
-          <img src="assets/logo.png" alt="Print Man® Printing Company" width="394" height="156" class="h-14 w-auto" loading="lazy" />
+          <img src="assets/logo.png" alt="Print Man®" width="394" height="156" class="h-14 w-auto" loading="lazy" />
         </span>
-        <p class="mt-4 max-w-xs text-sm leading-relaxed">Printing services worldwide. Quote on WhatsApp, delivered to your door.</p>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed">Printing services in Lahore, all from one source. Quote on WhatsApp, with delivery across Pakistan and worldwide.</p>
       </div>
       <div class="text-sm">
         <p class="font-bold text-white">Visit or contact us</p>
@@ -449,8 +604,10 @@
         <p class="font-bold text-white">Jump to</p>
         <ul class="mt-3 grid grid-cols-2 gap-y-2 max-w-xs">
           <li><a class="hover:text-white" href="#services">Services</a></li>
+          <li><a class="hover:text-white" href="#customers">Who we print for</a></li>
           <li><a class="hover:text-white" href="#process">How it works</a></li>
           <li><a class="hover:text-white" href="#materials">Materials</a></li>
+          <li><a class="hover:text-white" href="#faq">FAQ</a></li>
           <li><a class="hover:text-white" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -475,6 +632,6 @@
     </symbol>
   </svg>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
